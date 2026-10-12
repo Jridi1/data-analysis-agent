@@ -54,7 +54,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-4. Put the two dataset files in a `data` folder: `transactions_train.csv` and `transactions_test.csv` (the Digital Payment Fraud Detection Benchmark with 400,000 transactions and temporal drift). https://www.kaggle.com/datasets/rohit8527kmr7518/digital-payment-fraud-detection-benchmark
+4. 4. The dataset files are included in the data folder. Source: Digital Payment Fraud Detection Benchmark on Kaggle (https://www.kaggle.com/datasets/rohit8527kmr7518/digital-payment-fraud-detection-benchmark), license CC0 (public domain).
 5. Build the sandbox image and start the agent.
 
 ```bash

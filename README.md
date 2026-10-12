@@ -83,7 +83,7 @@ Every number in the report was copied from sandbox output and checked by an inde
 
 ## Limitations
 
-* A standard Docker container shares the host kernel. It is strong, but not as strong as gVisor or a throwaway virtual machine, which would be the next step.
+* A standard Docker container shares the host kernel.
 * Each call starts a fresh process, so the model must reload the data every time. There is no memory between questions.
 * Whatever the code prints is sent back to the LLM provider, so do not print private data.
 * The model sometimes produces malformed tool calls, and the free tier has token limits per minute. The agent retries malformed calls and stops on requests that are too large.

@@ -14,6 +14,10 @@ The project started with the standard LangChain pandas agent, which runs model w
 
 The API key lives only in the agent process. The container receives code and nothing else.
 
+
+https://github.com/user-attachments/assets/2a82c411-7583-46ad-b8a8-f70fd71227c8
+
+
 ## Safety layers
 
 | Risk | Control | How it is checked |

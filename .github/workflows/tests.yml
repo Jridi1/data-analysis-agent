@@ -1,0 +1,36 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sandbox-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install test dependencies
+        run: pip install pytest
+
+      - name: Build the sandbox image
+        run: docker build -t csv-sandbox sandbox_image/
+
+      - name: Run the sandbox attack tests
+        run: pytest test_sandbox.py -v
+
+      - name: Show the audit log if a test failed
+        if: failure()
+        run: tail -n 20 logs/runs.jsonl

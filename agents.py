@@ -9,11 +9,7 @@ load_dotenv()
 
 df_train = pd.read_csv("data/transactions_train.csv",parse_dates=["transaction_time"])
 df_test = pd.read_csv("data/transactions_test.csv", parse_dates=["transaction_time"])
-# print(df_train.head())
-# print("--------------------------")
-# print("--------------------------")
-# print("--------------------------")
-# print("--------------------------")
+
 #LLM
 llm = ChatGroq(
     model="openai/gpt-oss-120b",

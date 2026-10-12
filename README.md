@@ -1,5 +1,7 @@
 # CSV Data Analyst Agent: model written code that runs in a sandbox
 
+[![tests](https://github.com/Jridi1/data-analysis-agent/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/Jridi1/data-analysis-agent/actions/workflows/tests.yml)
+
 An analysis agent for CSV files. You ask a question in plain English, an LLM writes Python code, and the code runs inside a locked down Docker container instead of in the agent's own process. The output (numbers, tables, charts) comes back to the model, which explains it. If the code fails, the error goes back to the model so it can fix its own script.
 
 The project started with the standard LangChain pandas agent, which runs model written code inside the application. That version leaked the user's API key and a GitHub token when asked to print the environment. This repository replaces it with a sandboxed runner and a test suite that attacks it.
